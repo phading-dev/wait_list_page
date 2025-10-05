@@ -1,3 +1,4 @@
+import layoutImage = require("./images/1.png");
 import { ENV_VARS } from "../env_vars";
 import { createSecountBrandIcon } from "./icons";
 import { E } from "@selfage/element/factory";
@@ -171,12 +172,15 @@ export class MainBody {
           E.div(
             {
               class:
-                "bg-neutral-900 border border-neutral-800 rounded-2xl h-72 md:h-80 flex items-center justify-center",
+                "border border-neutral-800 rounded-2xl overflow-hidden bg-neutral-900",
             },
-            E.span(
-              { class: "text-neutral-500" },
-              E.text("[Mockup Image of Video Grid]"),
-            ),
+            E.image({
+              src: layoutImage,
+              alt: "Content grid preview",
+              class: "w-full h-auto block",
+              loading: "lazy",
+              decoding: "async",
+            }),
           ),
         ),
         E.div(

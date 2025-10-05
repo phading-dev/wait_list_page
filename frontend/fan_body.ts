@@ -1,7 +1,8 @@
+import layoutImage = require("./images/2.png");
 import { ENV_VARS } from "../env_vars";
+import { createFandazyBrandIcon } from "./icons";
 import { E } from "@selfage/element/factory";
 import { Ref } from "@selfage/ref";
-import { createFandazyBrandIcon } from "./icons";
 
 export class FanBody {
   private viewPortMeta: HTMLMetaElement;
@@ -50,7 +51,7 @@ export class FanBody {
         {},
         E.div(
           { class: "container mx-auto px-6 py-6 flex items-center" },
-          createFandazyBrandIcon(2)
+          createFandazyBrandIcon(2),
         ),
         E.div(
           {
@@ -171,12 +172,15 @@ export class FanBody {
           E.div(
             {
               class:
-                "bg-neutral-900 border border-neutral-800 rounded-2xl h-72 md:h-80 flex items-center justify-center",
+                "border border-neutral-800 rounded-2xl overflow-hidden bg-neutral-900",
             },
-            E.span(
-              { class: "text-neutral-500" },
-              E.text("[Mockup Image of Video Grid]"),
-            ),
+            E.image({
+              src: layoutImage,
+              alt: "Content grid preview",
+              class: "w-full h-auto block",
+              loading: "lazy",
+              decoding: "async",
+            }),
           ),
         ),
         E.div(
