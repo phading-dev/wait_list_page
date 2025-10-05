@@ -6,9 +6,6 @@ export interface EnvVars extends ClusterEnvVars {
   port?: number;
   builderAccount?: string;
   serviceAccount?: string;
-  replicas?: number;
-  cpu?: string;
-  memory?: string;
 }
 
 export let ENV_VARS: EnvVars = CLUSTER_ENV_VARS;

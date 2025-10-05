@@ -5,9 +5,9 @@ import { FanBody } from "./fan_body";
 async function main(): Promise<void> {
   document.head.title = ENV_VARS.platformName;
   if (ENV_VARS.flavor === "secount") {
-    new MainBody(document);
+    MainBody.create();
   } else if (ENV_VARS.flavor === "fandazy") {
-    new FanBody(document);
+    FanBody.create();
   }
 }
 
