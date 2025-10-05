@@ -52,6 +52,6 @@
     "node-fetch": "^2.7.0"
   },
   "assetExts": [
-    ".mp4"
+    ".png"
   ]
 }
