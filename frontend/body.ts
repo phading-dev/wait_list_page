@@ -420,7 +420,7 @@ export class MainBody {
   }
 
   private async joinWaitList(form: HTMLFormElement): Promise<void> {
-    let formData = new FormData(this.fanForm.val);
+    let formData = new FormData(form);
     let email = formData.get("email")?.toString() ?? "";
     let role = formData.get("role")?.toString() ?? "";
     await this.serviceClient.send(
