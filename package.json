@@ -13,7 +13,7 @@
   },
   "homepage": "https://github.com/phading-dev/wait_list_page#readme",
   "devDependencies": {
-    "@selfage/bundler_cli": "^5.4.1",
+    "@selfage/bundler_cli": "^5.5.0",
     "@selfage/cli": "^5.0.0",
     "@selfage/element": "^3.5.4",
     "@selfage/generator_cli": "^4.4.8",

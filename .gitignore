@@ -1,4 +1,8 @@
 node_modules/
-*.js
+bin/
+web_app_resources.yaml
 *.d.ts
+*.js
 *.tsbuildinfo
+*.html
+*.gz

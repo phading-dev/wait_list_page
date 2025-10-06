@@ -12,5 +12,9 @@ steps:
   args: ['build', '-t', 'gcr.io/phading-prod/wait-list-ui:latest', '-f', 'prod/Dockerfile', '.']
 - name: "gcr.io/cloud-builders/docker"
   args: ['push', 'gcr.io/phading-prod/wait-list-ui:latest']
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['compute', 'instances', 'stop', 'wait-list-ui', '--zone', 'us-central1-c']
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['compute', 'instances', 'start', 'wait-list-ui', '--zone', 'us-central1-c']
 options:
   logging: CLOUD_LOGGING_ONLY
