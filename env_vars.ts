@@ -10,6 +10,7 @@ export interface EnvVars extends ClusterEnvVars {
   builderAccount?: string;
   serviceAccount?: string;
   vmInstanceZone?: string;
+  ipAddressName?: string;
 }
 
 export let ENV_VARS: EnvVars = CLUSTER_ENV_VARS;

@@ -11,5 +11,8 @@ gcloud projects add-iam-policy-binding phading-fan-prod --member="serviceAccount
 gcloud projects add-iam-policy-binding phading-fan-prod --member="serviceAccount:wait-list-ui-builder@phading-fan-prod.iam.gserviceaccount.com" --role='roles/container.developer' --condition=None
 gcloud projects add-iam-policy-binding phading-fan-prod --member="serviceAccount:wait-list-ui-builder@phading-fan-prod.iam.gserviceaccount.com" --role='roles/compute.instanceAdmin.v1' --condition=None
 
+# Grant permissions to the default compute engine service account
+gcloud projects add-iam-policy-binding phading-fan-prod --member="serviceAccount:841790998625-compute@developer.gserviceaccount.com" --role='roles/datastore.user' --condition=None
+
 # Create VM instance
-gcloud compute instances create wait-list-ui --project=phading-fan-prod --zone=us-central1-c --machine-type=e2-micro --tags=http-server,https-server --image-family=cos-stable --image-project=cos-cloud --metadata-from-file=startup-script=fan_prod/vm_startup_script.sh
+gcloud compute instances create wait-list-ui --project=phading-fan-prod --zone=us-central1-c --machine-type=e2-micro --tags=http-server,https-server --image-family=cos-stable --image-project=cos-cloud --metadata-from-file=startup-script=fan_prod/vm_startup_script.sh --scopes=https://www.googleapis.com/auth/cloud-platform --address=wait-list-ui-ip

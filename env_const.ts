@@ -8,3 +8,4 @@ ENV_VARS.httpsPort = 443;
 ENV_VARS.builderAccount = "wait-list-ui-builder";
 ENV_VARS.serviceAccount = "wait-list-ui-account";
 ENV_VARS.vmInstanceZone = "us-central1-c";
+ENV_VARS.ipAddressName = "wait-list-ui-ip";

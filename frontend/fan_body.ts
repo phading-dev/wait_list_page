@@ -429,7 +429,7 @@ export class FanBody {
         role,
       }),
     );
-    this.fanForm.val.reset();
+    form.reset();
     alert("Thank you for joining the waitlist!");
   }
 
