@@ -49,7 +49,7 @@ COPY package-lock.json .
 COPY bin/ .
 RUN npm ci --omit=dev
 
-EXPOSE ${ENV_VARS.port}
+EXPOSE ${ENV_VARS.httpPort} ${ENV_VARS.httpsPort}
 CMD ["node", "main_bin", "."]
 `;
   writeFileSync(`${env}/Dockerfile`, dockerTemplate);
@@ -65,6 +65,7 @@ gcloud iam service-accounts create ${ENV_VARS.builderAccount}
 # Grant permissions to the builder service account
 gcloud projects add-iam-policy-binding ${ENV_VARS.projectId} --member="serviceAccount:${ENV_VARS.builderAccount}@${ENV_VARS.projectId}.iam.gserviceaccount.com" --role='roles/cloudbuild.builds.builder' --condition=None
 gcloud projects add-iam-policy-binding ${ENV_VARS.projectId} --member="serviceAccount:${ENV_VARS.builderAccount}@${ENV_VARS.projectId}.iam.gserviceaccount.com" --role='roles/container.developer' --condition=None
+gcloud projects add-iam-policy-binding ${ENV_VARS.projectId} --member="serviceAccount:${ENV_VARS.builderAccount}@${ENV_VARS.projectId}.iam.gserviceaccount.com" --role='roles/compute.instanceAdmin.v1' --condition=None
 
 # Create VM instance
 gcloud compute instances create ${ENV_VARS.releaseServiceName} --project=${ENV_VARS.projectId} --zone=${ENV_VARS.vmInstanceZone} --machine-type=e2-micro --tags=http-server,https-server --image-family=cos-stable --image-project=cos-cloud --metadata-from-file=startup-script=${env}/vm_startup_script.sh
