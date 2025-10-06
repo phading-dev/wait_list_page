@@ -1,0 +1,24 @@
+- kind: Service
+  name: WaitListService
+  path: /w
+- kind: Message
+  name: JoinWaitListRequestBody
+  fields:
+    - name: email
+      type: string
+      index: 1
+    - name: role
+      type: string
+      index: 2
+- kind: Message
+  name: JoinWaitListResponse
+- kind: RemoteCallsGroup
+  name: WaitListRemoteCalls
+  service: WaitListService
+  calls:
+    - name: JoinWaitList
+      path: /JoinWaitList
+      body: JoinWaitListRequestBody
+      response: JoinWaitListResponse
+  outputClient: ./service_interface/client
+  outputHandler: ./service_interface/handler

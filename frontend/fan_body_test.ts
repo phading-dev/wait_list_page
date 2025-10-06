@@ -16,7 +16,7 @@ TEST_RUNNER.run({
         await setDesktopView();
 
         // Execute
-        this.cut = new FanBody(document);
+        this.cut = new FanBody(document, undefined);
 
         // Verify
         await asyncAssertScreenshot(

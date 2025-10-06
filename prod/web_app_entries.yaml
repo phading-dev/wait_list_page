@@ -1,0 +1,3 @@
+entries:
+  - source: ./frontend_main
+    output: ./index

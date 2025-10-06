@@ -1,10 +1,17 @@
 import layoutImage = require("./images/1.png");
 import { ENV_VARS } from "../env_vars";
+import { newJoinWaitListRequest } from "../service_interface/client";
 import { createSecountBrandIcon } from "./icons";
+import { SERVICE_CLIENT } from "./service_client";
 import { E } from "@selfage/element/factory";
 import { Ref } from "@selfage/ref";
+import { WebServiceClient } from "@selfage/web_service_client";
 
 export class MainBody {
+  public static create(): MainBody {
+    return new MainBody(document, SERVICE_CLIENT);
+  }
+
   private viewPortMeta: HTMLMetaElement;
   private tailwindScript: HTMLScriptElement;
   private container = new Ref<HTMLDivElement>();
@@ -15,7 +22,10 @@ export class MainBody {
   private creatorForm = new Ref<HTMLFormElement>();
   private fanForm = new Ref<HTMLFormElement>();
 
-  public constructor(private document: Document) {
+  public constructor(
+    private document: Document,
+    private serviceClient: WebServiceClient,
+  ) {
     this.load();
   }
 
@@ -370,6 +380,15 @@ export class MainBody {
     );
     this.tabFanButton.val.addEventListener("click", () => this.activate("fan"));
     this.activate("creator");
+
+    this.creatorForm.val.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      this.joinWaitList(this.creatorForm.val);
+    });
+    this.fanForm.val.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      this.joinWaitList(this.fanForm.val);
+    });
   }
 
   private activate(tab: "creator" | "fan") {
@@ -398,6 +417,20 @@ export class MainBody {
       tabCreator.classList.replace("border-blue-500", "border-transparent");
       tabFan.classList.replace("border-transparent", "border-blue-500");
     }
+  }
+
+  private async joinWaitList(form: HTMLFormElement): Promise<void> {
+    let formData = new FormData(this.fanForm.val);
+    let email = formData.get("email")?.toString() ?? "";
+    let role = formData.get("role")?.toString() ?? "";
+    await this.serviceClient.send(
+      newJoinWaitListRequest({
+        email,
+        role,
+      }),
+    );
+    this.fanForm.val.reset();
+    alert("Thank you for joining the waitlist!");
   }
 
   public remove() {
