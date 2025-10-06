@@ -2,8 +2,11 @@ import { CLUSTER_ENV_VARS, ClusterEnvVars } from '@phading/cluster/env_vars';
 
 export interface EnvVars extends ClusterEnvVars {
   flavor?: "secount" | "fandazy";
+  sslPrivateKeyFile?: string;
+  sslCertificateFile?: string;
   releaseServiceName?: string;
-  port?: number;
+  httpPort?: number;
+  httpsPort?: number;
   builderAccount?: string;
   serviceAccount?: string;
   vmInstanceZone?: string;
