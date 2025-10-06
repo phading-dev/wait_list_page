@@ -13,7 +13,7 @@
   },
   "homepage": "https://github.com/phading-dev/wait_list_page#readme",
   "devDependencies": {
-    "@selfage/bundler_cli": "^5.1.5",
+    "@selfage/bundler_cli": "^5.4.1",
     "@selfage/cli": "^5.0.0",
     "@selfage/element": "^3.5.4",
     "@selfage/generator_cli": "^4.4.8",
@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@google-cloud/datastore": "^10.0.1",
-    "@phading/cluster": "^1.1.2",
+    "@phading/cluster": "^1.1.3",
     "@selfage/http_error": "^1.1.0",
     "@selfage/message": "^3.1.7",
     "@selfage/service_descriptor": "^5.3.2",
