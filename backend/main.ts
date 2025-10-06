@@ -6,11 +6,10 @@ import https = require("https");
 import { ENV_VARS } from "../env_vars";
 import { WAIT_LIST_SERVICE } from "../service_interface/interface";
 import { JoinWaitListHandler } from "./join_wait_list_handler";
-import { Storage } from "@google-cloud/storage";
+import { initSendgridClient } from "./sendgrid_client";
+import { STORAGE_CLIENT } from "./storage_client";
 import { ServiceHandler } from "@selfage/service_handler/service_handler";
 import { Express } from "express";
-
-let STORAGE_CLIENT = new Storage();
 
 async function main(): Promise<void> {
   let [sslPrivateKey, sslCertificate] = await Promise.all([
@@ -24,6 +23,7 @@ async function main(): Promise<void> {
         .file(ENV_VARS.sslCertificateFile)
         .createReadStream(),
     ),
+    initSendgridClient(),
   ]);
   let service = ServiceHandler.create(
     https.createServer({
