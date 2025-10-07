@@ -44,15 +44,29 @@ export class JoinWaitListHandler extends JoinWaitListHandlerInterface {
       method: "upsert",
     });
     await Promise.all([
-      this.sendgridClient.send({
-        to: body.email,
-        from: {
-          email: ENV_VARS.contactEmail,
-          name: ENV_VARS.contactEmailName,
-        },
-        subject: `Thank you for joining the wait list!`,
-        text: `Thank you for joining the wait list for ${ENV_VARS.platformName}! We will notify you when we launch.\n\n- The ${ENV_VARS.platformName} Team`,
-      }),
+      ...(body.role === "creator"
+        ? [
+            this.sendgridClient.send({
+              to: body.email,
+              from: {
+                email: ENV_VARS.creatorContactEmail,
+                name: ENV_VARS.contactEmailName,
+              },
+              subject: `Thank you for joining the wait list!`,
+              text: `We are building a new platform that aims to put more earnings in creators' hands compared to what you may currently be using. In order to accomplish that, ${ENV_VARS.platformName} needs your continuous feedback. Our goal is to build the features that matter to you as a creator and to help you grow your fanbase. Please write back to us and take advantage of this opportunity to guide ${ENV_VARS.platformName} towards a product/service that focuses on your success.\n\n- The ${ENV_VARS.platformName} Team`,
+            }),
+          ]
+        : [
+            this.sendgridClient.send({
+              to: body.email,
+              from: {
+                email: ENV_VARS.fanContactEmail,
+                name: ENV_VARS.contactEmailName,
+              },
+              subject: `Thank you for joining the wait list!`,
+              text: `We know you have many other options to support your favorite content creators. ${ENV_VARS.platformName} strives to give you a far better experience, a more authentic relationship with your favorite content creators. In order to accomplish that, ${ENV_VARS.platformName} needs your continuous feedback. Our goal is to build the features that matter to you as a loyal fan. Please write back to us and take advantage of this opportunity to guide ${ENV_VARS.platformName} towards a product/service that focuses on your personal enjoyment.\n\n- The ${ENV_VARS.platformName} Team`,
+            }),
+          ]),
       this.sendgridClient.send({
         to: ENV_VARS.adminEmails,
         from: {
