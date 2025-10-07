@@ -53,17 +53,15 @@ export class JoinWaitListHandler extends JoinWaitListHandlerInterface {
         subject: `Thank you for joining the wait list!`,
         text: `Thank you for joining the wait list for ${ENV_VARS.platformName}! We will notify you when we launch.\n\n- The ${ENV_VARS.platformName} Team`,
       }),
-      ...ENV_VARS.adminEmails.map((adminEmail) =>
-        this.sendgridClient.send({
-          to: adminEmail,
-          from: {
-            email: ENV_VARS.contactEmail,
-            name: ENV_VARS.contactEmailName,
-          },
-          subject: `[${ENV_VARS.platformName}] New wait list entry`,
-          text: `A new user has joined the wait list.\n\nEmail: ${body.email}\nRole: ${body.role}\n`,
-        }),
-      ),
+      this.sendgridClient.send({
+        to: ENV_VARS.adminEmails,
+        from: {
+          email: ENV_VARS.contactEmail,
+          name: ENV_VARS.contactEmailName,
+        },
+        subject: `[${ENV_VARS.platformName}] New wait list entry`,
+        text: `A new user has joined the wait list.\n\nEmail: ${body.email}\nRole: ${body.role}\n`,
+      }),
     ]);
     return {};
   }
