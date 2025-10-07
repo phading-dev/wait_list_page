@@ -1,18 +1,24 @@
+import { ENV_VARS } from "../env_vars";
 import { JoinWaitListHandlerInterface } from "../service_interface/handler";
 import {
   JoinWaitListRequestBody,
   JoinWaitListResponse,
 } from "../service_interface/interface";
 import { DATASTORE_CLIENT } from "./datastore_client";
+import { SENDGRID_CLIENT } from "./sendgrid_client";
 import { Datastore } from "@google-cloud/datastore";
 import { newBadRequestError } from "@selfage/http_error";
+import { MailService } from "@sendgrid/mail";
 
 export class JoinWaitListHandler extends JoinWaitListHandlerInterface {
   public static create(): JoinWaitListHandler {
-    return new JoinWaitListHandler(DATASTORE_CLIENT);
+    return new JoinWaitListHandler(DATASTORE_CLIENT, SENDGRID_CLIENT);
   }
 
-  public constructor(private datastore: Datastore) {
+  public constructor(
+    private datastore: Datastore,
+    private sendgridClient: MailService,
+  ) {
     super();
   }
 
@@ -37,6 +43,28 @@ export class JoinWaitListHandler extends JoinWaitListHandlerInterface {
       data: { email: body.email, role: body.role, timestamp: Date.now() },
       method: "upsert",
     });
+    await Promise.all([
+      this.sendgridClient.send({
+        to: body.email,
+        from: {
+          email: ENV_VARS.contactEmail,
+          name: ENV_VARS.contactEmailName,
+        },
+        subject: `Thank you for joining the wait list!`,
+        text: `Thank you for joining the wait list for ${ENV_VARS.platformName}! We will notify you when we launch.\n\n- The ${ENV_VARS.platformName} Team`,
+      }),
+      ...ENV_VARS.adminEmails.map((adminEmail) =>
+        this.sendgridClient.send({
+          to: adminEmail,
+          from: {
+            email: ENV_VARS.contactEmail,
+            name: ENV_VARS.contactEmailName,
+          },
+          subject: `[${ENV_VARS.platformName}] New wait list entry`,
+          text: `A new user has joined the wait list.\n\nEmail: ${body.email}\nRole: ${body.role}\n`,
+        }),
+      ),
+    ]);
     return {};
   }
 }

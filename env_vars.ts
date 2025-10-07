@@ -4,6 +4,7 @@ export interface EnvVars extends ClusterEnvVars {
   flavor?: "secount" | "fandazy";
   sslPrivateKeyFile?: string;
   sslCertificateFile?: string;
+  adminEmails?: string[];
   releaseServiceName?: string;
   httpPort?: number;
   httpsPort?: number;
