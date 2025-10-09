@@ -108,6 +108,13 @@ export class FanBody {
               ),
               E.div(
                 { class: "p-5 md:p-6" },
+                E.divRef(
+                  this.creatorNote,
+                  { class: "text-sm text-neutral-200 font-medium mb-3" },
+                  E.text(
+                    "Help us shape the roadmap by joining early betas and feedback sessions.",
+                  ),
+                ),
                 E.formRef(
                   this.creatorForm,
                   {
@@ -133,15 +140,13 @@ export class FanBody {
                         "px-6 py-3 bg-pink-500 hover:bg-pink-600 text-white rounded-lg font-medium shadow",
                       type: "submit",
                     },
-                    E.text("Join as Creator"),
+                    E.text("Join Waitlist"),
                   ),
                 ),
                 E.divRef(
-                  this.creatorNote,
-                  { class: "text-xs text-neutral-400 mt-3" },
-                  E.text(
-                    "Help us shape the roadmap by joining early betas and feedback sessions.",
-                  ),
+                  this.fanNote,
+                  { class: "text-sm text-neutral-200 font-medium mb-3" },
+                  E.text("Help us shape the roadmap by joining early betas and feedback sessions."),
                 ),
                 E.formRef(
                   this.fanForm,
@@ -168,13 +173,8 @@ export class FanBody {
                         "px-6 py-3 bg-pink-500 hover:bg-pink-600 text-white rounded-lg font-medium shadow",
                       type: "submit",
                     },
-                    E.text("Join as Fan"),
+                    E.text("Join Waitlist"),
                   ),
-                ),
-                E.divRef(
-                  this.fanNote,
-                  { class: "text-xs text-neutral-400 mt-3" },
-                  E.text("We’ll only use your email for updates. No spam."),
                 ),
               ),
             ),
@@ -369,7 +369,7 @@ export class FanBody {
           ),
           E.div(
             { class: "mt-2" },
-            E.text("We’ll only use your email for updates. No spam."),
+            E.text("We’ll only use your email for early beta invites, feedback sessions, and launch updates. No spam."),
           ),
         ),
       ),
