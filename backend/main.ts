@@ -6,7 +6,7 @@ import https = require("https");
 import { ENV_VARS } from "../env_vars";
 import { WAIT_LIST_SERVICE } from "../service_interface/interface";
 import { JoinWaitListHandler } from "./join_wait_list_handler";
-import { initSendgridClient } from "./sendgrid_client";
+import { initPostmarkClient } from "./postmark_client";
 import { STORAGE_CLIENT } from "./storage_client";
 import { ServiceHandler } from "@selfage/service_handler/service_handler";
 import { Express } from "express";
@@ -23,7 +23,7 @@ async function main(): Promise<void> {
         .file(ENV_VARS.sslCertificateFile)
         .createReadStream(),
     ),
-    initSendgridClient(),
+    initPostmarkClient(),
   ]);
   let service = ServiceHandler.create(
     https.createServer({

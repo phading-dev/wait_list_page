@@ -4,6 +4,7 @@ export interface EnvVars extends ClusterEnvVars {
   flavor?: "secount" | "fandazy";
   sslPrivateKeyFile?: string;
   sslCertificateFile?: string;
+  postmarkApiTokenFile?: string;
   creatorContactEmail?: string;
   fanContactEmail?: string;
   adminEmails?: string[];

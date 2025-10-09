@@ -2,6 +2,7 @@ import { ENV_VARS } from "./env_vars";
 
 ENV_VARS.sslPrivateKeyFile = "phading.key";
 ENV_VARS.sslCertificateFile = "phading.crt";
+ENV_VARS.postmarkApiTokenFile = "postmark_api_token";
 ENV_VARS.adminEmails = ["ykuyo.dev@gmail.com", "jeffheng@gmail.com"];
 ENV_VARS.releaseServiceName = "wait-list-ui";
 ENV_VARS.httpPort = 80;
