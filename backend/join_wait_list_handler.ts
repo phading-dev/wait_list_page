@@ -55,6 +55,7 @@ export class JoinWaitListHandler extends JoinWaitListHandlerInterface {
               MessageStream: JoinWaitListHandler.MESSAGE_STREAM,
               Subject: `Thank you for joining the ${ENV_VARS.platformName} waitlist!`,
               TextBody: `Hey there,
+
 Welcome to ${ENV_VARS.platformName}! We’re building a platform that lets creators keep more of what they earn — and grow faster with tools that actually support your success.
 
 We’d love your input as we shape ${ENV_VARS.platformName}’s next steps. Tell us what features or improvements would make the biggest difference for you.
@@ -72,6 +73,7 @@ ${ENV_VARS.contactPersonName} & the ${ENV_VARS.platformName} Team`,
               MessageStream: JoinWaitListHandler.MESSAGE_STREAM,
               Subject: `Thank you for joining the ${ENV_VARS.platformName} waitlist!`,
               TextBody: `Hey there,
+
 Welcome to ${ENV_VARS.platformName}! We know you have plenty of ways to support creators, but we’re building something a little different — a platform that helps fans like you connect more authentically with the people you love watching.
 
 To make that happen, we’d love your feedback. Tell us what kind of features or experiences would make ${ENV_VARS.platformName} more fun and rewarding for you.
