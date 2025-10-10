@@ -5,8 +5,8 @@ export interface EnvVars extends ClusterEnvVars {
   sslPrivateKeyFile?: string;
   sslCertificateFile?: string;
   postmarkApiTokenFile?: string;
-  creatorContactEmail?: string;
-  fanContactEmail?: string;
+  contactPersonName?: string;
+  contactPersonEmail?: string;
   adminEmails?: string[];
   releaseServiceName?: string;
   httpPort?: number;
