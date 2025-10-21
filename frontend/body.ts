@@ -72,11 +72,11 @@ export class MainBody {
             {},
             E.div(
               { class: "text-3xl font-bold tracking-tight mb-3" },
-              E.text("Zero platform fees."),
+              E.text("Where every second counts."),
             ),
             E.div(
               { class: "text-lg text-neutral-300 mb-8" },
-              E.text("Make every second counts."),
+              E.text("Keep more. Worry less. Grow faster."),
             ),
             E.div(
               {
@@ -212,7 +212,7 @@ export class MainBody {
               E.div(
                 { class: "text-neutral-300" },
                 E.text(
-                  "Keep 100% of what you earn from subscriptions, rentals, and tips — minus standard payment processing fees.",
+                  "Keep 100% of what you earn — minus standard payment processing fees.",
                 ),
               ),
             ),
@@ -228,7 +228,7 @@ export class MainBody {
               E.div(
                 { class: "text-neutral-300" },
                 E.text(
-                  "Refunds lower hesitation and boost sales—like free returns. Creators stay safe from chargebacks.",
+                  "Refunds lower hesitation and boost sales—like free returns.",
                 ),
               ),
             ),
@@ -280,7 +280,7 @@ export class MainBody {
               E.div(
                 { class: "text-neutral-300" },
                 E.text(
-                  "Absolutely zero. Creators keep 100% of their earnings from subscriptions, rentals, and tips — minus only standard payment processing fees, which vary by region and payment method. Building your own site wouldn’t save you a cent more.",
+                  "Absolutely zero. Creators keep 100% of their earnings from subscriptions, rentals, and tips — minus only standard payment processing fees, which vary by region and payment method. Building your own site wouldn’t save you a penny.",
                 ),
               ),
             ),
@@ -319,7 +319,7 @@ export class MainBody {
               E.div(
                 { class: "text-neutral-300" },
                 E.text(
-                  "Refunds are handled inside the platform, so most disputes never reach the bank. If someone still files a chargeback, we absorb the cost — creators stay protected.",
+                  "Refunds are handled inside the platform, so most disputes never reach the bank. If someone still files a chargeback, we will fight back with you using our access records.",
                 ),
               ),
             ),

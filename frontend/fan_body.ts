@@ -72,11 +72,11 @@ export class FanBody {
             {},
             E.div(
               { class: "text-3xl font-bold tracking-tight mb-3" },
-              E.text("Zero platform fees."),
+              E.text("Indulge your fantasy."),
             ),
             E.div(
               { class: "text-lg text-neutral-300 mb-8" },
-              E.text("Indulge your fantasy."),
+              E.text("Keep more. Worry less. Grow faster."),
             ),
             E.div(
               {
@@ -212,7 +212,7 @@ export class FanBody {
               E.div(
                 { class: "text-neutral-300" },
                 E.text(
-                  "Keep everything you earn from subscriptions, rentals and tips — minus 10% - 15% payment processing fees in the adult industry.",
+                  "Keep everything you earn — minus 10% - 15% payment processing fees in the adult industry.",
                 ),
               ),
             ),
@@ -228,7 +228,7 @@ export class FanBody {
               E.div(
                 { class: "text-neutral-300" },
                 E.text(
-                  "Fans feel safer to buy with built-in refunds, just like free returns. Creators stay shielded from chargebacks.",
+                  "Fans feel safer to buy with built-in refunds, just like free returns.",
                 ),
               ),
             ),
@@ -280,7 +280,7 @@ export class FanBody {
               E.div(
                 { class: "text-neutral-300" },
                 E.text(
-                  "Zero. Creators keep everything they earn from subscriptions, rentals, and tips — minus 10% - 15% payment processing fees in the adult industry, which could vary by region and payment method. Building your own site wouldn’t save you a cent more.",
+                  "Zero. Creators keep everything they earn from subscriptions, rentals, and tips — minus 10% - 15% payment processing fees in the adult industry, which could vary by region and payment method. Building your own site wouldn’t save you a penny.",
                 ),
               ),
             ),
@@ -319,7 +319,7 @@ export class FanBody {
               E.div(
                 { class: "text-neutral-300" },
                 E.text(
-                  "Refunds are handled inside the platform, so most disputes never reach the bank. If someone still files a chargeback, we absorb the cost — creators stay fully protected.",
+                  "Refunds are handled inside the platform, so most disputes never reach the bank. If someone still files a chargeback, we will fight back with you using our access records.",
                 ),
               ),
             ),
