@@ -72,11 +72,11 @@ export class FanBody {
             {},
             E.div(
               { class: "text-3xl font-bold tracking-tight mb-3" },
-              E.text("Indulge your fantasy."),
+              E.text("Zero platform fees."),
             ),
             E.div(
               { class: "text-lg text-neutral-300 mb-8" },
-              E.text("Earn more. Stay protected. Grow your audience."),
+              E.text("Indulge your fantasy."),
             ),
             E.div(
               {
@@ -207,12 +207,12 @@ export class FanBody {
               },
               E.div(
                 { class: "font-semibold text-xl mb-3" },
-                E.text("Refunds that build trust"),
+                E.text("Zero platform fees"),
               ),
               E.div(
                 { class: "text-neutral-300" },
                 E.text(
-                  "Fans feel safer to buy with built-in refunds, just like free returns. Creators stay shielded from chargebacks.",
+                  "Keep everything you earn from subscriptions, rentals and tips — minus 10% - 15% payment processing fees in the adult industry.",
                 ),
               ),
             ),
@@ -223,12 +223,12 @@ export class FanBody {
               },
               E.div(
                 { class: "font-semibold text-xl mb-3" },
-                E.text("Transparent fees"),
+                E.text("Refunds that build trust"),
               ),
               E.div(
                 { class: "text-neutral-300" },
                 E.text(
-                  "Keep ~80% of what you earn: 5% platform + ~15% adult‑industry processing. Fans cover the fixed top-up fee, not you.",
+                  "Fans feel safer to buy with built-in refunds, just like free returns. Creators stay shielded from chargebacks.",
                 ),
               ),
             ),
@@ -267,7 +267,20 @@ export class FanBody {
               E.div(
                 { class: "text-neutral-300" },
                 E.text(
-                  "Fandazy is a platform where fans support creators through subscriptions and rentals.",
+                  "Fandazy is a platform where fans support creators through subscriptions, rentals, tips and more.",
+                ),
+              ),
+            ),
+            E.div(
+              {},
+              E.div(
+                { class: "font-semibold mb-1" },
+                E.text("How much does the platform take?"),
+              ),
+              E.div(
+                { class: "text-neutral-300" },
+                E.text(
+                  "Zero. Creators keep everything they earn from subscriptions, rentals, and tips — minus 10% - 15% payment processing fees in the adult industry, which could vary by region and payment method. Building your own site wouldn’t save you a cent more.",
                 ),
               ),
             ),
@@ -307,19 +320,6 @@ export class FanBody {
                 { class: "text-neutral-300" },
                 E.text(
                   "Refunds are handled inside the platform, so most disputes never reach the bank. If someone still files a chargeback, we absorb the cost — creators stay fully protected.",
-                ),
-              ),
-            ),
-            E.div(
-              {},
-              E.div(
-                { class: "font-semibold mb-1" },
-                E.text("How much does the platform take?"),
-              ),
-              E.div(
-                { class: "text-neutral-300" },
-                E.text(
-                  "Creators keep ~80%. That’s a 5% platform cut plus ~15% for processing in the adult space. Fans also pay a small fixed processing fee on each top-up order, so you don’t.",
                 ),
               ),
             ),

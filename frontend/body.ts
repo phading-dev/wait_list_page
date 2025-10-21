@@ -72,11 +72,11 @@ export class MainBody {
             {},
             E.div(
               { class: "text-3xl font-bold tracking-tight mb-3" },
-              E.text("Where every second counts."),
+              E.text("Zero platform fees."),
             ),
             E.div(
               { class: "text-lg text-neutral-300 mb-8" },
-              E.text("Keep more. Worry less. Grow faster."),
+              E.text("Make every second counts."),
             ),
             E.div(
               {
@@ -207,12 +207,12 @@ export class MainBody {
               },
               E.div(
                 { class: "font-semibold text-xl mb-3" },
-                E.text("Worry‑free refunds"),
+                E.text("Zero platform fees"),
               ),
               E.div(
                 { class: "text-neutral-300" },
                 E.text(
-                  "Refunds lower hesitation and boost sales—like free returns. Creators stay safe from chargebacks.",
+                  "Keep 100% of what you earn from subscriptions, rentals, and tips — minus standard payment processing fees.",
                 ),
               ),
             ),
@@ -223,12 +223,12 @@ export class MainBody {
               },
               E.div(
                 { class: "font-semibold text-xl mb-3" },
-                E.text("Low fees"),
+                E.text("Worry‑free refunds"),
               ),
               E.div(
                 { class: "text-neutral-300" },
                 E.text(
-                  "Keep ~95% of what you earn: 2% platform + ~3% processing. Fans cover the fixed top-up fee, not you.",
+                  "Refunds lower hesitation and boost sales—like free returns. Creators stay safe from chargebacks.",
                 ),
               ),
             ),
@@ -267,7 +267,20 @@ export class MainBody {
               E.div(
                 { class: "text-neutral-300" },
                 E.text(
-                  "Secount is a platform where fans support creators through subscriptions and rentals.",
+                  "Secount is a platform where fans support creators through subscriptions, rentals, tips and more.",
+                ),
+              ),
+            ),
+            E.div(
+              {},
+              E.div(
+                { class: "font-semibold mb-1" },
+                E.text("How much does the platform take?"),
+              ),
+              E.div(
+                { class: "text-neutral-300" },
+                E.text(
+                  "Absolutely zero. Creators keep 100% of their earnings from subscriptions, rentals, and tips — minus only standard payment processing fees, which vary by region and payment method. Building your own site wouldn’t save you a cent more.",
                 ),
               ),
             ),
@@ -307,19 +320,6 @@ export class MainBody {
                 { class: "text-neutral-300" },
                 E.text(
                   "Refunds are handled inside the platform, so most disputes never reach the bank. If someone still files a chargeback, we absorb the cost — creators stay protected.",
-                ),
-              ),
-            ),
-            E.div(
-              {},
-              E.div(
-                { class: "font-semibold mb-1" },
-                E.text("How much does the platform take?"),
-              ),
-              E.div(
-                { class: "text-neutral-300" },
-                E.text(
-                  "Creators keep ~95%. That’s a 2% platform cut plus ~3% processing. Fans also pay a small fixed processing fee on each top-up order, so you don’t.",
                 ),
               ),
             ),
