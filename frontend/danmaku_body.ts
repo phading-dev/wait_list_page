@@ -17,6 +17,7 @@ export class DanmakuBody {
   public container = new Ref<HTMLDivElement>();
   public wishlistForm = new Ref<HTMLFormElement>();
   public wishlistToast = new Ref<HTMLDivElement>();
+  private videoDemo = new Ref<HTMLVideoElement>();
 
   public constructor(
     private document: Document,
@@ -144,13 +145,12 @@ export class DanmakuBody {
               class:
                 "border border-neutral-800 rounded-2xl overflow-hidden bg-neutral-900",
             },
-            E.video({
+            E.videoRef(
+              this.videoDemo,
+              {
               src: danmakuDemo,
               alt: "Comment overlay demo",
               class: "w-full h-auto block",
-              autoplay: "true",
-              muted: "true",
-              loop: "true",
             }),
             E.div(
               {
@@ -242,6 +242,9 @@ export class DanmakuBody {
       e.preventDefault();
       this.joinWaitList(this.wishlistForm.val);
     });
+    this.videoDemo.val.muted = true;
+    this.videoDemo.val.loop = true;
+    this.videoDemo.val.autoplay = true;
   }
 
   private async joinWaitList(form: HTMLFormElement): Promise<void> {
