@@ -2,21 +2,43 @@ import { ENV_VARS } from "./env_vars";
 import { writeFileSync } from "fs";
 
 export function generate(env: string) {
-  let frontendMainTemplate = `import "./env";
-import "../frontend/main";
-`;
-  writeFileSync(`${env}/frontend_main.ts`, frontendMainTemplate);
-
   let backendMainTemplate = `import "./env";
 import "../backend/main";
 `;
   writeFileSync(`${env}/backend_main.ts`, backendMainTemplate);
 
-  let webAppEntriesTemplate = `entries:
+  if (ENV_VARS.flavor === "fandazy") {
+    let frontendMainTemplate = `import "./env";
+import "../frontend/fan_main";
+`;
+    writeFileSync(`${env}/frontend_main.ts`, frontendMainTemplate);
+
+    let webAppEntriesTemplate = `entries:
   - source: ${env}/frontend_main
     output: index
 `;
-  writeFileSync(`${env}/web_app_entries.yaml`, webAppEntriesTemplate);
+    writeFileSync(`${env}/web_app_entries.yaml`, webAppEntriesTemplate);
+  } else if (ENV_VARS.flavor === "secount") {
+    let frontendMainTemplate = `import "./env";
+import "../frontend/sec_main";
+`;
+    writeFileSync(`${env}/frontend_main.ts`, frontendMainTemplate);
+    let frontendDanmakuMainTemplate = `import "./env";
+import "../frontend/danmaku_main";
+`;
+    writeFileSync(
+      `${env}/frontend_danmaku_main.ts`,
+      frontendDanmakuMainTemplate,
+    );
+
+    let webAppEntriesTemplate = `entries:
+  - source: ${env}/frontend_main
+    output: index
+  - source: ${env}/frontend_danmaku_main
+    output: danmaku
+`;
+    writeFileSync(`${env}/web_app_entries.yaml`, webAppEntriesTemplate);
+  }
 
   let cloudbuildTemplate = `steps:
 - name: 'node:20.12.1'

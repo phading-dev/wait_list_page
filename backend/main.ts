@@ -8,6 +8,7 @@ import { WAIT_LIST_SERVICE } from "../service_interface/interface";
 import { JoinWaitListHandler } from "./join_wait_list_handler";
 import { initPostmarkClient } from "./postmark_client";
 import { STORAGE_CLIENT } from "./storage_client";
+import { WishListHandler } from "./wish_list_handler";
 import { ServiceHandler } from "@selfage/service_handler/service_handler";
 import { Express } from "express";
 
@@ -34,7 +35,8 @@ async function main(): Promise<void> {
   ).addCorsAllowedPreflightHandler();
   service
     .addHandlerRegister(WAIT_LIST_SERVICE)
-    .add(JoinWaitListHandler.create());
+    .add(JoinWaitListHandler.create())
+    .add(WishListHandler.create());
 
   // Web UI
   let app = (service as any).app as Express;
