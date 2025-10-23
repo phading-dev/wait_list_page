@@ -12,6 +12,20 @@
       index: 2
 - kind: Message
   name: JoinWaitListResponse
+- kind: Message
+  name: WishlistRequestBody
+  fields:
+    - name: email
+      type: string
+      index: 1
+    - name: feature
+      type: string
+      index: 2
+    - name: idea
+      type: string
+      index: 3
+- kind: Message
+  name: WishlistResponse
 - kind: RemoteCallsGroup
   name: WaitListRemoteCalls
   service: WaitListService
@@ -20,5 +34,9 @@
       path: /JoinWaitList
       body: JoinWaitListRequestBody
       response: JoinWaitListResponse
+    - name: Wishlist
+      path: /Wishlist
+      body: WishlistRequestBody
+      response: WishlistResponse
   outputClient: ./service_interface/client
   outputHandler: ./service_interface/handler

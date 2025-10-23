@@ -1,3 +1,5 @@
 entries:
   - source: prod/frontend_main
     output: index
+  - source: prod/frontend_danmaku_main
+    output: danmaku

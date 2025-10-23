@@ -32,6 +32,37 @@ export let JOIN_WAIT_LIST_RESPONSE: MessageDescriptor<JoinWaitListResponse> = {
   fields: [],
 };
 
+export interface WishlistRequestBody {
+  email?: string,
+  feature?: string,
+  idea?: string,
+}
+
+export let WISHLIST_REQUEST_BODY: MessageDescriptor<WishlistRequestBody> = {
+  name: 'WishlistRequestBody',
+  fields: [{
+    name: 'email',
+    index: 1,
+    primitiveType: PrimitiveType.STRING,
+  }, {
+    name: 'feature',
+    index: 2,
+    primitiveType: PrimitiveType.STRING,
+  }, {
+    name: 'idea',
+    index: 3,
+    primitiveType: PrimitiveType.STRING,
+  }],
+};
+
+export interface WishlistResponse {
+}
+
+export let WISHLIST_RESPONSE: MessageDescriptor<WishlistResponse> = {
+  name: 'WishlistResponse',
+  fields: [],
+};
+
 export let JOIN_WAIT_LIST: RemoteCallDescriptor = {
   name: "JoinWaitList",
   service: WAIT_LIST_SERVICE,
@@ -41,5 +72,17 @@ export let JOIN_WAIT_LIST: RemoteCallDescriptor = {
   },
   response: {
     messageType: JOIN_WAIT_LIST_RESPONSE,
+  },
+}
+
+export let WISHLIST: RemoteCallDescriptor = {
+  name: "Wishlist",
+  service: WAIT_LIST_SERVICE,
+  path: "/Wishlist",
+  body: {
+    messageType: WISHLIST_REQUEST_BODY,
+  },
+  response: {
+    messageType: WISHLIST_RESPONSE,
   },
 }

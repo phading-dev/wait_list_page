@@ -1,4 +1,4 @@
-import layoutImage = require("./images/2.png");
+import layoutImage = require("./asset/2.png");
 import { ENV_VARS } from "../env_vars";
 import { newJoinWaitListRequest } from "../service_interface/client";
 import { createFandazyBrandIcon } from "./icons";
@@ -30,6 +30,7 @@ export class FanBody {
   }
 
   private async load(): Promise<void> {
+    this.document.title = ENV_VARS.platformName;
     this.document
       .querySelectorAll("meta[name=viewport]")
       .forEach((el) => el.remove());

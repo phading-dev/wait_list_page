@@ -1,2 +1,2 @@
 import "./env";
-import "../frontend/main";
+import "../frontend/fan_main";
