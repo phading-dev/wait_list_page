@@ -55,9 +55,8 @@ export class DanmakuBody {
     );
 
     this.document.body.append(
-      E.divRef(
-        this.container,
-        {},
+      E.div(
+        { ref: this.container },
         E.div(
           { class: "container mx-auto px-6 py-6 flex items-center" },
           createSecountBrandIcon(2),
@@ -92,9 +91,12 @@ export class DanmakuBody {
                   { class: "text-sm text-neutral-200 font-medium mb-3" },
                   E.text("Care about this too? Join the wishlist."),
                 ),
-                E.formRef(
-                  this.wishlistForm,
-                  { id: "wishlistForm", class: "flex flex-col gap-4" },
+                E.form(
+                  {
+                    ref: this.wishlistForm,
+                    id: "wishlistForm",
+                    class: "flex flex-col gap-4",
+                  },
                   E.div(
                     { class: "flex flex-col sm:flex-row gap-4" },
                     E.input({
@@ -129,9 +131,9 @@ export class DanmakuBody {
                     ),
                   ),
                 ),
-                E.divRef(
-                  this.wishlistToast,
+                E.div(
                   {
+                    ref: this.wishlistToast,
                     id: "wishlistToast",
                     class: "hidden mt-3 text-sm text-emerald-300",
                   },
@@ -145,9 +147,8 @@ export class DanmakuBody {
               class:
                 "border border-neutral-800 rounded-2xl overflow-hidden bg-neutral-900",
             },
-            E.videoRef(
-              this.videoDemo,
-              {
+            E.video({
+              ref: this.videoDemo,
               src: danmakuDemo,
               alt: "Comment overlay demo",
               class: "w-full h-auto block",

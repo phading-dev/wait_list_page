@@ -15,7 +15,7 @@
   "devDependencies": {
     "@selfage/bundler_cli": "^5.5.0",
     "@selfage/cli": "^5.0.0",
-    "@selfage/element": "^3.5.4",
+    "@selfage/element": "^4.0.3",
     "@selfage/generator_cli": "^4.4.8",
     "@selfage/puppeteer_test_executor_api": "^5.1.0",
     "@selfage/puppeteer_test_runner": "^1.1.0",

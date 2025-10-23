@@ -57,9 +57,10 @@ export class SecBody {
       "font-sans",
     );
     this.document.body.append(
-      E.divRef(
-        this.container,
-        {},
+      E.div(
+        {
+          ref: this.container,
+        },
         E.div(
           { class: "container mx-auto px-6 py-6 flex items-center" },
           createSecountBrandIcon(2),
@@ -86,9 +87,9 @@ export class SecBody {
               },
               E.div(
                 { class: "flex" },
-                E.buttonRef(
-                  this.tabCreatorButton,
+                E.button(
                   {
+                    ref: this.tabCreatorButton,
                     id: "tabCreator",
                     class:
                       "flex-1 px-4 py-3 font-medium rounded-tl-2xl border-b-2 border-blue-500 hover:text-neutral-200",
@@ -96,9 +97,9 @@ export class SecBody {
                   },
                   E.text("I'm a Creator"),
                 ),
-                E.buttonRef(
-                  this.tabFanButton,
+                E.button(
                   {
+                    ref: this.tabFanButton,
                     id: "tabFan",
                     class:
                       "flex-1 px-4 py-3 font-medium rounded-tr-2xl border-b-2 border-transparent text-neutral-400 hover:text-neutral-200",
@@ -109,16 +110,18 @@ export class SecBody {
               ),
               E.div(
                 { class: "p-4 md:p-6" },
-                E.divRef(
-                  this.creatorNote,
-                  { class: "text-sm text-neutral-200 font-medium mb-3" },
+                E.div(
+                  {
+                    ref: this.creatorNote,
+                    class: "text-sm text-neutral-200 font-medium mb-3",
+                  },
                   E.text(
                     "Help us shape the roadmap by joining early betas and feedback sessions.",
                   ),
                 ),
-                E.formRef(
-                  this.creatorForm,
+                E.form(
                   {
+                    ref: this.creatorForm,
                     id: "creatorForm",
                     class: "flex flex-col sm:flex-row gap-4",
                   },
@@ -144,16 +147,18 @@ export class SecBody {
                     E.text("Join Waitlist"),
                   ),
                 ),
-                E.divRef(
-                  this.fanNote,
-                  { class: "text-sm text-neutral-200 font-medium mb-3" },
+                E.div(
+                  {
+                    ref: this.fanNote,
+                    class: "text-sm text-neutral-200 font-medium mb-3",
+                  },
                   E.text(
                     "Help us shape the roadmap by joining early betas and feedback sessions.",
                   ),
                 ),
-                E.formRef(
-                  this.fanForm,
+                E.form(
                   {
+                    ref: this.fanForm,
                     id: "fanForm",
                     class: "hidden flex flex-col sm:flex-row gap-4",
                   },
