@@ -49,7 +49,7 @@ import "../frontend/danmaku_main";
   args: ['bundage', 'bwa', '-ec', '${env}/web_app_entries.yaml', '-o', 'bin']
 - name: node:20.12.1
   entrypoint: npx
-  args: ['bundage', 'bfn', '${env}/backend_main', 'main_bin', '-t', 'bin']
+  args: ['bundage', 'bns', '${env}/backend_main', 'main_bin', '-t', 'bin']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/${ENV_VARS.projectId}/${ENV_VARS.releaseServiceName}:latest', '-f', '${env}/Dockerfile', '.']
 - name: "gcr.io/cloud-builders/docker"
