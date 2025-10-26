@@ -3,3 +3,6 @@ entries:
     output: index
   - source: prod/frontend_danmaku_main
     output: danmaku
+extraAssets:
+  - from: favicon.ico
+    to: favicon.ico

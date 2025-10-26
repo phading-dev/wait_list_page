@@ -36,6 +36,9 @@ import "../frontend/danmaku_main";
     output: index
   - source: ${env}/frontend_danmaku_main
     output: danmaku
+extraAssets:
+  - from: favicon.ico
+    to: favicon.ico
 `;
     writeFileSync(`${env}/web_app_entries.yaml`, webAppEntriesTemplate);
   }
