@@ -17,7 +17,9 @@ export function createSecountLogoIcon(colorClass: string): SVGSVGElement {
       class: `logo-icon ${colorClass}`,
       style: `height: 100%; fill: none; stroke: currentColor;`,
       viewBox: "-2 -2.8 24 24",
+      "aria-label": "O",
     },
+    E.svgTitle({}, E.text("O")),
     // 50 deg to 10 deg
     E.path({
       d: `M17.66 3.57 A10 10 0 1 1 11.74 .15`,

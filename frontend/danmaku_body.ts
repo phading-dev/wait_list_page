@@ -192,11 +192,13 @@ export class DanmakuBody {
               },
               E.div(
                 { class: "font-semibold text-xl mb-3" },
-                E.text("Modern player"),
+                E.text("Permanent ownership"),
               ),
               E.div(
                 { class: "text-neutral-300" },
-                E.text("Responsive UI that feels great on mobile."),
+                E.text(
+                  "Your favorite videos can be saved to your own storage space. Forever replayable.",
+                ),
               ),
             ),
             E.div(
@@ -210,6 +212,108 @@ export class DanmakuBody {
                 E.text(
                   "Pure focus on content and community. No interruptions.",
                 ),
+              ),
+            ),
+          ),
+        ),
+        E.div(
+          { class: "container mx-auto px-6 py-16" },
+          E.div(
+            { class: "text-3xl font-bold text-center mb-10" },
+            E.text("FAQ"),
+          ),
+          E.div(
+            { class: "max-w-2xl mx-auto space-y-6" },
+            E.div(
+              {},
+              E.div(
+                { class: "font-semibold mb-1" },
+                E.text("What is danmaku / comment overlay?"),
+              ),
+              E.div(
+                { class: "text-neutral-300" },
+                E.text(
+                  "Danmaku is real-time comments that float across the screen while you watch. It makes watching feel like hanging out together, not watching alone.",
+                ),
+              ),
+            ),
+            E.div(
+              {},
+              E.div(
+                { class: "font-semibold mb-1" },
+                E.text("Is this for livestreams or uploaded videos?"),
+              ),
+              E.div(
+                { class: "text-neutral-300" },
+                E.text(
+                  "Both — but we’re starting with uploaded videos first. Live streaming and more media formats comes later.",
+                ),
+              ),
+            ),
+            E.div(
+              {},
+              E.div(
+                { class: "font-semibold mb-1" },
+                E.text("Do I need to install anything?"),
+              ),
+              E.div(
+                { class: "text-neutral-300" },
+                E.text("No. The experience runs directly in the browser."),
+              ),
+            ),
+            E.div(
+              {},
+              E.div(
+                { class: "font-semibold mb-1" },
+                E.text("Will comments be chaotic and unreadable?"),
+              ),
+              E.div(
+                { class: "text-neutral-300" },
+                E.text("No — viewer comfort tools are built-in, including density slider and speed controls. Playful, but not overwhelming."),
+              ),
+            ),
+            E.div(
+              {},
+              E.div(
+                { class: "font-semibold mb-1" },
+                E.text("Can I save a video to keep forever?"),
+              ),
+              E.div(
+                { class: "text-neutral-300" },
+                E.text("Yes. If you saved it, it stays in your personal library, even if the creator deletes it. Think of it like buying a physical DVD — even if the store stops selling it, your copy is still yours."),
+              ),
+            ),
+            E.div(
+              {},
+              E.div(
+                { class: "font-semibold mb-1" },
+                E.text("Does this mean creators lose control?"),
+              ),
+              E.div(
+                { class: "text-neutral-300" },
+                E.text("No. Creators choose whether their videos can be saved or not when they upload. If they mark a video as “streaming only,” viewers can watch but can’t keep a copy."),
+              ),
+            ),
+            E.div(
+              {},
+              E.div(
+                { class: "font-semibold mb-1" },
+                E.text("Can I download my saved videos?"),
+              ),
+              E.div(
+                { class: "text-neutral-300" },
+                E.text("Yes. Your library is yours. You can download your saved videos anytime."),
+              ),
+            ),
+            E.div(
+              {},
+              E.div(
+                { class: "font-semibold mb-1" },
+                E.text("Can I share or reupload what I saved?"),
+              ),
+              E.div(
+                { class: "text-neutral-300" },
+                E.text("No. Your saved copies are for personal viewing only, like keeping a book or DVD. You own your copy to watch, not to redistribute."),
               ),
             ),
           ),
